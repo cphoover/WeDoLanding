@@ -24,7 +24,9 @@
           With just a few taps, you’re on your way to getting things done – no
           stress, no waiting, just results.
         </p>
-        <button class="beta-invite-btn">Sign Up For Beta Invite</button>
+        <button onclick="scrollToEmail()" class="beta-invite-btn">
+          Sign Up For Beta Invite
+        </button>
       </div>
       <div class="app-preview">
         <div class="app-frame">
@@ -75,11 +77,25 @@
           class="email-input"
           id="email"
           required
-          
         />
 
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="subscribe-btn" id="subscribe-btn">
+          Sign Up
+        </button>
       </form>
     </div>
+    <script>
+        // Smoothly scroll to the email field
+        function scrollToEmail() {
+          const emailField = document.getElementById("email");
+          emailField.scrollIntoView({
+            behavior: "smooth", // Enables the smooth scroll animation
+            block: "center",    // Ensures the element appears in the middle of the viewport
+            inline: "nearest",  // Avoids unnecessary horizontal scrolling
+          });
+          emailField.focus({ preventScroll: true }); // Focus without interrupting the scroll animation
+        }
+      </script>
+      
   </body>
 </html>
